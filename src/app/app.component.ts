@@ -6,16 +6,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    { title: 'Cuentas', url: '/folder/Inbox', icon: 'cash' },
-    { title: 'Prestamos', url: '/folder/Outbox', icon: 'card' },
-    { title: 'Inversiones', url: '/folder/Favorites', icon: 'wallet' },
-    { title: 'Solicitudes', url: '/folder/Archived', icon: 'accessibility' },
-    { title: 'Descuentos', url: '/folder/Trash', icon: 'pricetag' },
-    { title: 'Noticias', url: '/folder/Spam', icon: 'newspaper' },
-    { title: 'Sugerencias', url: '/folder/Spam', icon: 'alert' },
-    { title: 'Ayuda', url: '/folder/Spam', icon: 'help' },
-    { title: 'Tasas', url: '/folder/Spam', icon: 'bulb' },
-    { title: 'Configuración', url: '/folder/Spam', icon: 'build' },
+    { title: 'Cuentas', url: '/cuentas', icon: 'cash' },
+    { title: 'Prestamos', url: '/prestamos', icon: 'card' },
+    { title: 'Inversiones', url: '/inversiones', icon: 'wallet' },
+    { title: 'Solicitudes', url: '/solicitudes', icon: 'accessibility' },
+    { title: 'Descuentos', url: '/descuentos', icon: 'pricetag' },
+    { title: 'Noticias', url: '/noticias', icon: 'newspaper' },
+    { title: 'Sugerencias', url: '/sugerencias', icon: 'alert' },
+    { title: 'Ayuda', url: '/ayuda', icon: 'help' },
+    { title: 'Tasas', url: '/tasas', icon: 'bulb' },
+    { title: 'Configuración', url: '/configuracion', icon: 'build' },
   ];
 
   constructor() {}
