@@ -7,8 +7,18 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense"> </ion-header>
+<ion-content padding>
+  <br>
+      <ion-button expand="block"  (click)="prestamoAlert()"> Prestamo </ion-button>
+      <br>
+      <ion-button expand="block"  (click)="cuentaAlert()"> Estado de cuenta </ion-button>
+      <br>
+      <ion-button expand="block"  (click)="tarjetaAlert()"> Solicitar tarjeta de credito </ion-button>
+      <br>
+      <ion-button expand="block"  (click)="otroAlert()"> Otro</ion-button>
+ 
 
-  <div id="container"></div>
+
+
+
 </ion-content>
