@@ -8,7 +8,31 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense"> </ion-header>
+  <ion-card>
+    <ion-item style="padding-left: 40px">
+      Tasas de compra y venta de divisas
+    </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>$</ion-card-subtitle>
+      <ion-card-title>USD</ion-card-title>
+    </ion-card-header>
 
+    <ion-card-content> Venta: 55.60 </ion-card-content>
+    <ion-card-content> Compra: 54.00 </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>€</ion-card-subtitle>
+      <ion-card-title>EUR</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content> Venta: 63.50 </ion-card-content>
+    <ion-card-content> Compra: 58.50 </ion-card-content>
+  </ion-card>
+
+  <ion-header collapse="condense"> </ion-header>
   <div id="container"></div>
 </ion-content>
