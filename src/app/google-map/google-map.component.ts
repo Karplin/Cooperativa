@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { google } from '@google/maps';
+//import { google } from '@google/maps';
 declare var google: any;
 
 
@@ -23,7 +23,7 @@ export class GoogleMapComponent {
   initMap(){
 
     let coords = new google.maps.LatLng(25,80);
-    let mapOptions: google.maps.MapOptions = {
+    /*let mapOptions: google.maps.MapOptions = {
       center: coords,
       zoom: 11,
       mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -34,7 +34,7 @@ export class GoogleMapComponent {
     let marker: google.maps.Marker = new google.maps.Marker({
       map: this.map,
       position: coords
-    })
+    })*/
 
   }
 

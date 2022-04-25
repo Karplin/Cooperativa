@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Api } from './Interfaces/api.interface';
+import { ApiService } from './Servicios/api.service';
+
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -18,5 +22,32 @@ export class AppComponent {
     { title: 'Configuración', url: '/configuracion', icon: 'build' },
   ];
 
-  constructor() {}
+  constructor(
+    private ApiService: ApiService
+  ) {}
+
+  getAllTasks() {
+    this.ApiService.getAllTasks()
+    .subscribe(api => {
+      console.log(api);
+    });
+  }
+  getTask() {
+    this.ApiService.getTask('5')
+    .subscribe(api => {
+      console.log(api);
+    });
+  }
+  createTask() {
+    const Api = {
+      userId: '1',
+      title: 'change title',
+      completed: true
+    };
+   /* this.ApiService.createTask(Api)
+    .subscribe((newTask) => {
+      console.log(newTask);
+    });*/
+  }
+
 }
