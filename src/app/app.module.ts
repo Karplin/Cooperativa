@@ -9,6 +9,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -16,4 +18,7 @@ import { AlertController } from '@ionic/angular';
   providers: [{ provide: RouteReuseStrategy,  useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
+
+
+
 export class AppModule {}
