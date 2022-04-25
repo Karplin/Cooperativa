@@ -7,6 +7,10 @@ import { IonicModule } from '@ionic/angular';
 import { AyudaPageRoutingModule } from './ayuda-routing.module';
 
 import { AyudaPage } from './ayuda.page';
+import { GoogleMapComponent } from '../../google-map/google-map.component';
+
+
+
 
 @NgModule({
   imports: [
@@ -14,7 +18,8 @@ import { AyudaPage } from './ayuda.page';
     FormsModule,
     IonicModule,
     AyudaPageRoutingModule
+
   ],
-  declarations: [AyudaPage]
+  declarations: [AyudaPage, GoogleMapComponent]
 })
 export class AyudaPageModule {}
