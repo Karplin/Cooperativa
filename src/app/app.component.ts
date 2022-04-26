@@ -62,7 +62,11 @@ export class AppComponent {
        this.mensaje = api.mensaje;
        console.log(this.mensaje);
        console.log(this.info);
+
+
+
     });
+    
   }
 
   getMessage(msg, name) {

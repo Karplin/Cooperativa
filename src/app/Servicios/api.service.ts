@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Api } from '../Interfaces/api.interface';
+import { Data, Prestamo } from '../Interfaces/prestamos.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -42,7 +43,7 @@ export class ApiService {
   getTask_prestamos(id: string) {
     const path = `${this.apipath}/prestamos/`;
 
-    return this.http.post<Api>(path, this.httpParams.set('token', this.token));
+    return this.http.post<Data>(path, this.httpParams.set('token', this.token));
   }
 
    
