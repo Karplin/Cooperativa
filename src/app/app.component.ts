@@ -28,10 +28,11 @@ export class AppComponent {
   clave
   cedula
   mesage = 'hola';
+  mesagex = 'hola';
   nombre: string;
   apellido: string;
   mensaje: string;
-
+  info = []
 
     
   constructor(
@@ -54,9 +55,13 @@ export class AppComponent {
     this.api = [];
     this.ApiService.getTask(cedula, clave)
     .subscribe(api => {
-      this.api.push(api);
       console.log(api);
-      this.mensaje = api.mensaje[0];
+       this.mensaje = api.mensaje;
+       //this.nombre = api.nombre;
+       this.info = api.data;
+       this.mensaje = api.mensaje;
+       console.log(this.mensaje);
+       console.log(this.info);
     });
   }
 

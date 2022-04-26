@@ -14,7 +14,7 @@ export class LoginPage implements OnInit {
  clave1: string;
  mensaje = 'hola';
  nombre = 'hola';
- info = {}
+ info = []
  
   constructor(
     private ApiService: ApiService,
@@ -30,9 +30,14 @@ export class LoginPage implements OnInit {
     .subscribe(api => {
       console.log(api);
        this.mensaje = api.mensaje;
-       this.nombre = api.nombre;
+       //this.nombre = api.nombre;
+       this.info = api.data;
+       this.mensaje = api.mensaje;
+       console.log(this.mensaje);
+       console.log(this.info);
     });
     this.AppComponent.getTask(this.cedula1, this.clave1);
+
   }
   
   ngOnInit() {

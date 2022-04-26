@@ -6,7 +6,7 @@
       <ion-content>
         <img style="margin-left: 65px;" src="assets/img/portada.png" width="150" height="120" alt="" />
         <ion-list id="inbox-list">
-          <ion-note>{{mesage}}</ion-note>
+          <ion-note>{{info.nombre}}</ion-note>
 
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
             <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
