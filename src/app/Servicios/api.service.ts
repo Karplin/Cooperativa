@@ -25,10 +25,10 @@ export class ApiService {
     const path = `${this.apipath}`;
     return this.http.get<Api[]>(path);
   }
-  getTask(id: string) {
+  getTask(cedula: string, clave: string) {
     const path = `${this.apipath}/login/`;
 
-    return this.http.post<Api>(path, this.httpParams.set('usuario', '@@@').set('clave', '@@@'));
+    return this.http.post<Api>(path, this.httpParams.set('usuario', cedula).set('clave', clave));
   }
 
   getTask_resumen(id: string) {
