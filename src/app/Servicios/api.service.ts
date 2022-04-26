@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-
 import { Api } from '../Interfaces/api.interface';
 
 @Injectable({
@@ -11,14 +10,14 @@ export class ApiService {
   private apipath = 'https://coopdgii.com/coopvirtual/App';
   private token = 'TESTACCOUNTTOKEN434234345424323JAJAJA';
   
-  
+  datos = []
   get httpParams(){
     return new HttpParams();
   }
 
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
   ) { }
 
   getAllTasks() {
@@ -27,9 +26,12 @@ export class ApiService {
   }
   getTask(cedula: string, clave: string) {
     const path = `${this.apipath}/login/`;
-
     return this.http.post<Api>(path, this.httpParams.set('usuario', cedula).set('clave', clave));
   }
+  /*taskToArray(cedula: string, clave: string){
+   this.datos = this.getTask(cedula, clave);
+    
+  }*/
 
   getTask_resumen(id: string) {
     const path = `${this.apipath}/resumen/`;

@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Api } from './Interfaces/api.interface';
 import { ApiService } from './Servicios/api.service';
+import { LoginPage } from './login/login.page';
+import { LoginPageModule } from './login/login.module';
 
 
 @Component({
@@ -22,21 +24,45 @@ export class AppComponent {
     { title: 'Configuración', url: '/configuracion', icon: 'build' },
   ];
 
+  api: Api[] = [];
+  clave
+  cedula
+  mesage = 'hola';
+  nombre: string;
+  apellido: string;
+  mensaje: string;
+
+
+    
   constructor(
     private ApiService: ApiService
+   
   ) {}
+  id: string;
 
   getAllTasks() {
     this.ApiService.getAllTasks()
     .subscribe(api => {
       console.log(api);
+      api.forEach(element => {
+        this.api.push(element)
+      });
+    });
+    
+  }
+  getTask(cedula, clave) {
+    this.api = [];
+    this.ApiService.getTask(cedula, clave)
+    .subscribe(api => {
+      this.api.push(api);
+      console.log(api);
+      this.mensaje = api.mensaje[0];
     });
   }
-  getTask() {
-    this.ApiService.getTask('@@@', '@@@')
-    .subscribe(api => {
-      console.log(api);
-    });
+
+  getMessage(msg, name) {
+   // this.mesage = name;
+
   }
   createTask() {
     const Api = {
