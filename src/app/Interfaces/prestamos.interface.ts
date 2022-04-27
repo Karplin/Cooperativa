@@ -11,6 +11,7 @@ export interface datos {
     ultimo_acceso: string;
     cuentas:       Cuenta[];
     prestamos:     Prestamo[];
+    data : [];
   }
   
   export interface Cuenta {

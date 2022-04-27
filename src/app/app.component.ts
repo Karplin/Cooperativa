@@ -3,6 +3,7 @@ import { Api } from './Interfaces/api.interface';
 import { ApiService } from './Servicios/api.service';
 import { LoginPage } from './login/login.page';
 import { LoginPageModule } from './login/login.module';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -36,8 +37,8 @@ export class AppComponent {
 
     
   constructor(
-    private ApiService: ApiService
-   
+    private ApiService: ApiService,
+    private router: Router
   ) {}
   id: string;
 
@@ -67,6 +68,10 @@ export class AppComponent {
 
     });
     
+  }
+
+  getSalir(){
+    this.router.navigate(['/login']);
   }
 
   getMessage(msg, name) {

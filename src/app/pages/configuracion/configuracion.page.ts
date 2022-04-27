@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Api } from 'src/app/Interfaces/api.interface';
 import { ApiService } from '../../Servicios/api.service';
 
+
 @Component({
   selector: 'app-configuracion',
   templateUrl: './configuracion.page.html',

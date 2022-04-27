@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../Servicios/api.service';
 import {AppComponent} from '../app.component';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -18,7 +19,8 @@ export class LoginPage implements OnInit {
  
   constructor(
     private ApiService: ApiService,
-    private AppComponent: AppComponent
+    private AppComponent: AppComponent,
+    private router: Router
   ) {}
 
 
@@ -29,12 +31,19 @@ export class LoginPage implements OnInit {
     this.ApiService.getTask(cedula1, clave1)
     .subscribe(api => {
       console.log(api);
+      if (!api) {
+        this.router.navigate(['/login']);
+        return;
+      }
+
        this.mensaje = api.mensaje;
        //this.nombre = api.nombre;
        this.info = api.data;
        this.mensaje = api.mensaje;
        console.log(this.mensaje);
        console.log(this.info);
+
+       this.router.navigate(['/cuentas']);
     });
     this.AppComponent.getTask(this.cedula1, this.clave1);
 

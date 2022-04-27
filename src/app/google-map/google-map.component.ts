@@ -22,8 +22,9 @@ export class GoogleMapComponent {
 
   initMap(){
 
-    let coords = new google.maps.LatLng(25,80);
-    /*let mapOptions: google.maps.MapOptions = {
+    let coords = new google.maps.LatLng(18.47457056506465, -69.90294310184876);
+    
+    let mapOptions = {
       center: coords,
       zoom: 11,
       mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -31,10 +32,10 @@ export class GoogleMapComponent {
 
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions)
 
-    let marker: google.maps.Marker = new google.maps.Marker({
-      map: this.map,
+    let marker = new google.maps.Marker({
+      map: this.mapElement.nativeElement,
       position: coords
-    })*/
+    })
 
   }
 

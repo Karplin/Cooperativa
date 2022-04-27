@@ -18,10 +18,12 @@
 
         <br>
 
-        <ion-button routerLink="/login" shape="round" >
-          Salir
-          <ion-icon slot="end" name="power"></ion-icon>
-        </ion-button>
+        <ion-menu-toggle>
+          <ion-button (click)="getSalir()" shape="round" >
+            Salir
+            <ion-icon slot="end" name="power"></ion-icon>
+          </ion-button>
+        </ion-menu-toggle>
         <ion-list-header>COOPDGII MÓVIL</ion-list-header>
 
       </ion-content>

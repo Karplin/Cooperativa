@@ -11,7 +11,7 @@ import { datos, Data, Prestamo } from '../../Interfaces/prestamos.interface';
 export class PrestamosPage implements OnInit {
 
   public prestamos: string;
-
+  monto1 = '';
   mensaje = 'hola';
   nombre = 'hola';
   info = [];
@@ -28,11 +28,11 @@ export class PrestamosPage implements OnInit {
 
     this.ApiService.getTask_prestamos(token)
     .subscribe(Data => {
-      console.log(Data);
-       this.mensaje = Data.ultimo_acceso;
+      console.log(Data, 'data');
        //this.nombre = api.nombre;
-       this.info = Data.prestamos;
+       this.info = Data.data;
        console.log(this.info, 'info');
+       this.monto1 = this.info[0].monto_prestamo;
     });
 
   }
