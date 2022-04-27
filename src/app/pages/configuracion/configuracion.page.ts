@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Api } from 'src/app/Interfaces/api.interface';
 import { ApiService } from '../../Servicios/api.service';
-
+import { Data } from '../../Interfaces/prestamos.interface';
+import {AppComponent} from '../../app.component';
 
 @Component({
   selector: 'app-configuracion',
@@ -10,8 +11,19 @@ import { ApiService } from '../../Servicios/api.service';
 })
 export class ConfiguracionPage {
 
-  
+  constructor(
+    private ApiService: ApiService,
+    private AppComponent: AppComponent
 
+  ) {}
+  
+  cedula1: string ='@@@';
+  clave1: string = '@@@';
+  mensaje = 'hola';
+  nombre = 'hola';
+  info = []
+
+  
   showPassword = false;
   showPassword1 = false;
   showPassword2 = false;
@@ -49,4 +61,31 @@ export class ConfiguracionPage {
       this.passwordToggleIcon3 = 'eye';
     }
   }
+
+  getTask() {
+    let cedula1 = this.cedula1;
+    let clave1 = this.clave1;
+
+    this.ApiService.getTask(cedula1, clave1)
+    .subscribe(api => {
+      console.log(api);
+  
+       this.mensaje = api.mensaje;
+       //this.nombre = api.nombre;
+       this.info = api.data;
+       this.mensaje = api.mensaje;
+       console.log(this.mensaje);
+       console.log(this.info);
+
+    });
+
+    this.AppComponent.getTask(this.cedula1, this.clave1);
+
+  }
+
+  ngOnInit() {
+    this.getTask();
+  }
+  
+
 }
